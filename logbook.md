@@ -7,3 +7,4 @@
 | 2.11.2025  | 2           | cisco course   | module 2    |
 | 2.11.2025  | 1           | indepandent search   | deep dive into CS & DP   |
 | 4.11.2025  | 2           | cisco course   | module 3    |
+ 4.11.2025  | 3           | cisco course   | module 4, 5 and final exam    |
