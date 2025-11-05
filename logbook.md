@@ -8,3 +8,4 @@
 | 2.11.2025  | 1           | indepandent search   | deep dive into CS & DP   |
 | 4.11.2025  | 2           | cisco course   | module 3    |
  4.11.2025  | 3           | cisco course   | module 4, 5 and final exam    |
+| 4.11.2025  |4            | -dive into burp suite <br>- dive into portSwingger    | -clear idea about burp suite <br> -Lab: Username enumeration via different responses <br> -Lab: 2FA simple bypass  |
