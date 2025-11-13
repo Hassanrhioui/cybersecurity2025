@@ -7,8 +7,9 @@
 | 2.11.2025  | 2            |-cisco course   |-module 2    |
 | 2.11.2025  | 1            |-indepandent search   |-deep dive into CS & DP   |
 | 4.11.2025  | 2            |-cisco course   |-module 3    |
- 4.11.2025  | 3             |-cisco course   |-module 4, 5 and final exam    |
-| 4.11.2025  |4             |-dive into burp suite <br>- dive into portSwingger    |-clear idea about burp suite <br> -Lab: Username enumeration via different responses <br> -Lab: 2FA simple bypass  |
-| 7.11.2025  | 2           | SQL injections   |-SQL injections<br>-Lab1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data<br>-Lab2: SQL injection vulnerability allowing login bypass    |
+| 4.11.2025  | 3             |-cisco course   |-module 4, 5 and final exam    |
+| 4.11.2025  |4             |-dive into burp suite <br>- dive into portSwingger<br>-Authentification    |-clear idea about burp suite <br> -Lab1: Username enumeration via different responses <br> -Lab2: 2FA simple bypass  |
+| 7.11.2025  | 2           | SQL injections   |-SQL injections<br>-Lab3: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data<br>-Lab4: SQL injection vulnerability allowing login bypass    |
+| 13.11.2025  | 4            |-Access control<br>-reflections  |-Lab5: unprotected admin functionality<br>-Lab6: unprotected admin functionality with unpredictable URL<br>-Reflections   |
 
 
