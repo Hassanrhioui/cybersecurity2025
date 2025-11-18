@@ -13,20 +13,7 @@
   3. Active scanning (SQLi, Path Traversal, fuzzing)  
   4. Evidence collection (screenshots, ZAP alerts)
 
-## 3. Findings Summary
-
-| Asset | Vulnerability | Severity | Evidence | Recommendation |
-|-------|---------------|----------|----------|----------------|
-| Registration form | Path Traversal via `username` parameter | High | ZAP alert, POST /register | Validate input, restrict special characters, enforce allow-list |
-| Registration form | SQL Injection | High | ZAP alert, 500 Internal Server Error | Use parameterized queries, sanitize inputs |
-| Registration form | Absence of Anti-CSRF Tokens | Medium | ZAP alert, no CSRF token in form | Implement CSRF tokens in forms |
-| Registration form | CSP Header Not Set | Medium | ZAP alert, GET / and /register | Add Content-Security-Policy header |
-| Registration form | Format String Error | Medium | ZAP alert, POST /register with `%n%s` payload | Sanitize input, avoid unsafe string formatting |
-| Registration form | Missing Anti-clickjacking Header | Medium | ZAP alert, GET / and /register | Add X-Frame-Options or CSP frame-ancestors |
-| Registration form | X-Content-Type-Options Header Missing | Low | ZAP alert, multiple static files | Add `X-Content-Type-Options: nosniff` header |
-| Registration form | User Agent Fuzzer anomalies | Informational | ZAP alert, varied responses to User-Agent | Monitor unusual user agents, improve logging |
-
-## 4. Detailed Evidence
+## 3. Detailed Evidence
 
 ### Path Traversal
 - **Request:** POST /register with crafted `username` parameter  
@@ -71,10 +58,10 @@
 - **Impact:** Could reveal inconsistencies or hidden functionality exploitable by attackers  
 - **Fix:** Standardize responses, monitor logs for unusual User-Agent activity
 
-## 5. Conclusion
+## 4. Conclusion
 The Booking System registration page contains multiple high-risk vulnerabilities (SQL Injection, Path Traversal) and several medium-risk issues (missing headers, CSRF). Immediate remediation should prioritize **input validation, secure coding practices, and proper security headers**.  
 
-## 6. Reflection
+## 5. Reflection
 As a beginner using OWASP ZAP, I learned how automated scanning highlights common web application flaws. The most challenging part was interpreting alerts and understanding their real-world impact. For example, SQL Injection and Path Traversal are critical because they can directly compromise data, while missing headers like CSP or X-Frame-Options are more subtle but still important for defense in depth.  
 
 This exercise taught me:
@@ -84,6 +71,6 @@ This exercise taught me:
 
 Overall, the assignment showed me how penetration testing is both technical and analytical, requiring evidence collection and clear reporting.
 
-## 7. Attachments
+## 6. Attachments
 - **ZAP_Report.html** (full scan output)  
 - **Screenshots** (optional, stored in Evidence folder)
