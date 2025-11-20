@@ -8,8 +8,13 @@
 | 2.11.2025  | 1            |-indepandent search   |-deep dive into CS & DP   |
 | 4.11.2025  | 2            |-cisco course   |-module 3    |
 | 4.11.2025  | 3             |-cisco course   |-module 4, 5 and final exam    |
-| 4.11.2025  |4             |-dive into burp suite <br>- dive into portSwingger<br>-Authentification    |-clear idea about burp suite <br> -Lab1: Username enumeration via different responses <br> -Lab2: 2FA simple bypass  |
-| 7.11.2025  | 2           | SQL injections   |-SQL injections<br>-Lab3: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data<br>-Lab4: SQL injection vulnerability allowing login bypass    |
-| 13.11.2025  | 4            |-Access control<br>-reflections  |-Lab5: unprotected admin functionality<br>-Lab6: unprotected admin functionality with unpredictable URL<br>-Reflections   |
+| 4.11.2025  |4             |-dive into burp suite <br>- dive into portSwingger<br>-Authentification    |-clear idea about burp suite <br> -**Lab1**: Username enumeration via different responses <br> -**Lab2**: 2FA simple bypass  |
+| 7.11.2025  | 2           | SQL injections   |-SQL injections<br>-**Lab3**: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data<br>-**Lab4**: SQL injection vulnerability allowing login bypass    |
+| 13.11.2025  | 4            |-Access control<br>-reflections  |-**Lab5**: unprotected admin functionality<br>-**Lab6**: unprotected admin functionality with unpredictable URL<br>-Reflections   |
+| 16.11.2025  | 2             |-Access control labs   |-**Lab7**: User role controlled by request parameter <br>-**Lab8**: User role can be modified in user profile    |
 | 18.11.2025  | 15            |-Penetration testing of Booking System -Phase 1  |-Set up a local testing environment, used OWASP ZAP to analyze the registration page, identified multiple vulnerabilities, documented findings in a structured report, and some reflections  |
+
+
+
+
 
