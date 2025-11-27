@@ -17,7 +17,7 @@
 
 ### 2.1. High Risk
 
-#### [Path Traversal](https://www.zaproxy.org/docs/alerts/6/)
+#### [Path Traversal]
 *   **Description:** The application allows access to files and directories outside the web root via the manipulation of input variables.
 *   **URL:** `http://localhost:8000/register`
 *   **Method:** `POST`
@@ -25,7 +25,7 @@
 *   **Attack:** `register` (Context implies manipulation of file paths)
 *   **Evidence:** The scanner was likely able to access or infer access to restricted files.
 
-#### [SQL Injection](https://www.zaproxy.org/docs/alerts/40018/)
+#### [SQL Injection]
 *   **Description:** The application appears to concatenate user input directly into database queries, allowing attackers to manipulate the query structure.
 *   **URL:** `http://localhost:8000/register`
 *   **Method:** `POST`
@@ -37,23 +37,23 @@
 
 ### 2.2. Medium Risk
 
-#### [Absence of Anti-CSRF Tokens](https://www.zaproxy.org/docs/alerts/10202/)
+#### [Absence of Anti-CSRF Tokens]
 *   **Description:** No Anti-CSRF tokens were found in the HTML submission form. This allows attackers to forge requests on behalf of a victim.
 *   **URL:** `http://localhost:8000/register`
 *   **Evidence:** `<form action="/register" method="POST">`
 
-#### [Content Security Policy (CSP) Header Not Set](https://www.zaproxy.org/docs/alerts/10038/)
+#### [Content Security Policy (CSP) Header Not Set]
 *   **Description:** The `Content-Security-Policy` header is missing, making the site harder to defend against XSS and data injection attacks.
 *   **Locations:** Root `/` and `/register`.
 
-#### [Format String Error](https://www.zaproxy.org/docs/alerts/30002/)
+#### [Format String Error]
 *   **Description:** The submitted data is evaluated as a command by the application (specifically formatted strings like `%s` or `%n`).
 *   **URL:** `http://localhost:8000/register`
 *   **Parameter:** `username`
 *   **Attack:** `ZAP%n%s%n%s...`
 *   **Evidence:** The script closed the connection on a `/%s`, indicating improper string handling in the backend.
 
-#### [Missing Anti-clickjacking Header](https://www.zaproxy.org/docs/alerts/10020/)
+#### [Missing Anti-clickjacking Header]
 *   **Description:** The response does not include `X-Frame-Options` or `Content-Security-Policy` with `frame-ancestors`, allowing the site to be framed by attackers.
 *   **Locations:** Root `/` and `/register`.
 
