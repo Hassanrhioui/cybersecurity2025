@@ -18,7 +18,7 @@
 
 ## Alert Detail
 
-### [ Absence of Anti-CSRF Tokens ](https://www.zaproxy.org/docs/alerts/10202/)
+### [ Absence of Anti-CSRF Tokens ]
 
 *   **Risk Level:** Medium
 *   **Description:** No Anti-CSRF tokens were found in a HTML submission form. A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent.
@@ -27,7 +27,7 @@
 *   **Evidence:** `<form action="/register" method="POST">`
 *   **Analysis:** The form accepts a POST request to create a user but lacks a hidden randomized token. This allows attackers to forge requests.
 
-### [ User Agent Fuzzer ](https://www.zaproxy.org/docs/alerts/10104/)
+### [ User Agent Fuzzer ]
 
 *   **Risk Level:** Informational
 *   **Description:** Check for differences in response based on fuzzed User Agent.
