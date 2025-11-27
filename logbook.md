@@ -13,7 +13,8 @@
 | 13.11.2025  | 4            |-Access control<br>-reflections  |-**Lab5**: unprotected admin functionality<br>-**Lab6**: unprotected admin functionality with unpredictable URL<br>-Reflections   |
 | 16.11.2025  | 2             |-Access control labs   |-**Lab7**: User role controlled by request parameter <br>-**Lab8**: User role can be modified in user profile    |
 | 18.11.2025  | 15            |-Penetration testing of Booking System -Phase 1  |-Set up a local testing environment, used OWASP ZAP to analyze the registration page, identified multiple vulnerabilities, documented findings in a structured report, and some reflections  |
-
+| 26.11.2025  |  6           |-going through some recorings, documentations and practice  |-practice in docker, Linux    |
+| 27.11.2025  | 10             |-pen testing of part2<br>-reports: part1 and part2    |-Deployed Phase 1 Part 2 application. Performed OWASP ZAP scan (Round 2). Analyzed results comparing Part 1 and Part 2. Verified fixes manually. Wrote functionality test report and discussion forum post.    |
 
 
 
