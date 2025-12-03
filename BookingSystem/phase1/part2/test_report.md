@@ -54,7 +54,6 @@
 | **F-02** | 🔵 Info | User Agent Fuzzer | The scan performed a test to check for differing responses based on various User Agents. No direct risk, but noted for completeness. | URL: http://localhost:8001/register, Instances: 12 |
 | **F-03** | 🔴 High (Resolved) | SQL Injection / Path Traversal | These two High-risk findings from Round 1 were not detected in Round 2, indicating successful remediation. | – |
 | **F-04** | 🟠 Medium (Likely Unaddressed) | Missing Security Headers | Multiple Medium/Low security header issues (X-Frame-Options, CSP, X-Content-Type-Options) from Round 1 are likely still present but were not explicitly triggered or detected in this Round 2 baseline scan. | – |
-| **F-05** | – | – | – | – |
 
 5️⃣ OWASP ZAP Test Report (Attachment)
 [Open ZAP Report](./zap_report_round2.md)
