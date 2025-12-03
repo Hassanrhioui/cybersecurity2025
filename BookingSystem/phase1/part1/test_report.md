@@ -11,7 +11,7 @@
 | **Test approach:** | Black-box |
 | **Test environment & dates – Start:** | 2025-11-27 |
 | **Test environment & dates – End:** | 2025-11-27 |
-| **Test environment details:** | Target is running on http://localhost:8000/. Specific details of the OS, runtime, DB, and browsers are unknown (Black-box test). |
+| **Test environment details:** | Target is running on http://localhost:8000/. |
 | **Assumptions & constraints:** | Limited to the endpoints discovered by the ZAP baseline scan; no authenticated testing was performed. |
 
 
