@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Tester(s):** | [Tester Name/Team Name] |
-| **Name:** | Re-Test and Mitigation Verification – Round 2 |
+| **Tester(s):** | Hassan Rhioui |
+| **Name:** | round 2 of tests|
 | **Purpose:** | Re-test the target application to verify the successful remediation of Critical/High-risk vulnerabilities identified in Round 1 and to assess any remaining or newly introduced issues. |
 | **Scope – Tested components:** | http://localhost:8001/, /register endpoint |
 | **Scope – Exclusions:** | Underlying Operating System, Network Infrastructure, External Services |
