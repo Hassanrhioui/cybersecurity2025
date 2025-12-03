@@ -25,11 +25,11 @@
 | **Short summary (1–2 sentences):** | Round 2 scan confirms that all previously identified Critical and High-risk vulnerabilities have been successfully remediated, significantly improving the application's security posture. The primary remaining security issue is a Medium-risk vulnerability concerning the absence of Anti-CSRF tokens. |
 | **Overall risk level:** | Medium |
 | **Top 5 immediate actions:** |  
-| **1.** | Immediately implement unique, cryptographically secure Anti-CSRF Tokens in the /register POST form to prevent Cross-Site Request Forgery.  ** | 
-| **2.** | Verify the successful implementation of fixes for SQL Injection and Path Traversal (originally High/Critical issues).  ** | 
-| **3.** | Implement the `X-Frame-Options: DENY` or a `frame-ancestors` directive to prevent the previously identified Clickjacking issue.  ** | 
-| **4.** | Configure the web server to set a robust Content Security Policy (CSP) header to mitigate injection attacks.  ** | 
-| **5.** | Configure the web server to set the `X-Content-Type-Options: nosniff` header for system hardening. ** | 
+| **1.** | Immediately implement unique, cryptographically secure Anti-CSRF Tokens in the /register POST form to prevent Cross-Site Request Forgery.  | 
+| **2.** | Verify the successful implementation of fixes for SQL Injection and Path Traversal (originally High/Critical issues).   | 
+| **3.** | Implement the `X-Frame-Options: DENY` or a `frame-ancestors` directive to prevent the previously identified Clickjacking issue.  | 
+| **4.** | Configure the web server to set a robust Content Security Policy (CSP) header to mitigate injection attacks.  | 
+| **5.** | Configure the web server to set the `X-Content-Type-Options: nosniff` header for system hardening.  | 
 
 
 ---
