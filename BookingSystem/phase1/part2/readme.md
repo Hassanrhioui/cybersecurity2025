@@ -1,4 +1,4 @@
-# Booking System Security Assessment - Phase 1 Part 2
+# Booking System Security - Phase 1 Part 2
 
 ## Overview
 This folder contains the results of the second round of testing for the Booking System application. After reporting the initial vulnerabilities in Part 1, we received an updated version of the application. The goal of this phase was to verify which vulnerabilities were fixed and which ones are still present.
