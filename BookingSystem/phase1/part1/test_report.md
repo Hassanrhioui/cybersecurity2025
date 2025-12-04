@@ -23,11 +23,11 @@
 |--------|--------|
 | **Short summary** | The initial security scan identified two Critical vulnerabilities, SQL Injection and Path Traversal on the registration endpoint, indicating severe risk to the application's data and system integrity. Multiple medium severity security misconfigurations, such as missing protective headers and CSRF tokens, were also found. |
 | **Top 5 immediate actions:** |  
-1. Immediately implement parameterized queries or stored procedures on all database interactions to mitigate SQL Injection on inputs like username.  
-2. Enforce stringent input validation and utilize path canonicalization functions to prevent Path Traversal.  
-3. Add unique, cryptographically secure Anti-CSRF Tokens to the /register POST form to prevent Cross-Site Request Forgery.  
-4. Configure the web server to set a robust Content Security Policy (CSP) header to mitigate XSS and data injection attacks.  
-5. Implement the `X-Frame-Options: DENY` or `Content-Security-Policy: frame-ancestors 'none'` directive to prevent Clickjacking. |
+| **1.** | Immediately implement parameterized queries or stored procedures on all database interactions to mitigate SQL Injection on inputs like username.  
+| **2.** | Enforce stringent input validation and utilize path canonicalization functions to prevent Path Traversal.  
+| **3.** | Add unique, cryptographically secure Anti-CSRF Tokens to the /register POST form to prevent Cross-Site Request Forgery.  
+| **4.** | Configure the web server to set a robust Content Security Policy (CSP) header to mitigate XSS and data injection attacks.  
+| **5.** | Implement the `X-Frame-Options: DENY` or `Content-Security-Policy: frame-ancestors 'none'` directive to prevent Clickjacking. |
 
 
 ---
