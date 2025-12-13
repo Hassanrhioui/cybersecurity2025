@@ -1,0 +1,31 @@
+# Final GDPR Compliance Checklist – Web-based Booking System
+
+| Check | Spec Ref. | Test Input / Observed Behavior | Result | Impact | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Personal data mapping and minimization** | | | | | |
+| Have all personal data collected and processed... been identified? | GDPR | Yes (Email, Password Hash, Birthdate, Role, Reservation Data) are all used. | ✅ PASS | Low | All primary data has been identified through testing. |
+| Have you ensured that only necessary personal data is collected? | GDPR | Only collects data necessary for service function and age check. | ✅ PASS | Low | Aligns with data minimization principles. |
+| Is user age recorded to verify that the booker is over 15 years old? | Spec 6 | Birthdate is collected and used to enforce the 15+ booking rule. | ✅ PASS | Low | Directly supports service logic (Confirmed by log/DB trigger). |
+| **User registration and management** | | | | | |
+| Does the registration form include GDPR-compliant consent...? | GDPR | Registration form only requires acceptance of **Terms of Service** (Screenshot). | ❌ FAIL | Medium | Lacks separate, explicit consent for data processing (Privacy Policy). |
+| Can users view, edit, and delete their own personal data...? | GDPR | Users can view their data ("My Account"). Admin can delete Reserver. | ⚠️ ATTENTION | Medium | Cannot confirm user interface allows *full* data download/edit by the user. |
+| Is there a mechanism for the administrator to delete a reserver...? | GDPR | Admin interface allows **deletion of Reservers** (Confirmed). | ✅ PASS | Low | Fulfills the "right to be forgotten" mechanism via administrative action. |
+| Is underage registration (under 15 years) and booking restricted? | Spec 6 | **Database log confirms trigger enforcement** (`ERROR: User must be over 15...`). | ✅ PASS | Low | Control is implemented on the secure backend. |
+| **Booking visibility** | | | | | |
+| Are bookings visible to non-logged-in users only at the resource level (without any personal data)? | Spec 8 | Guest view hides the 'Reserver' column. | ✅ PASS | Low | Correctly implemented for non-logged-in users. |
+| Is it ensured that names, emails, or other personal data of bookers are not exposed publicly or to unauthorized users? | Spec 8 | **Authenticated users (Reserver/Admin) can see the Reserver email.** | ❌ FAIL | High | Violates Spec 8 and GDPR/PbD (Confirmed by viewing logged-in homepage). |
+| **Access control and authorization** | | | | | |
+| Have you ensured that only administrators can add, modify, and delete resources and bookings? | Spec 4, 5 | **Confirmed:** Admin can manage all. Reserver is blocked from Admin paths. | ✅ PASS | Low | Access control is functioning correctly for core administrative functions. |
+| Is the system using role-based access control (e.g., reserver vs. administrator)? | General | System defines and enforces `reserver` vs. `administrator` roles. | ✅ PASS | Low | Role enforcement confirmed (e.g., Admin can delete, Reserver is blocked). |
+| Are administrator privileges limited to ensure GDPR compliance...? | GDPR | **Admin role is visible on the homepage.** | ❌ FAIL | Medium | Admin access is secure, but the system exposes the **Admin role** unnecessarily (BAC/PbD failure). |
+| **Privacy by Design Principles** | | | | | |
+| Has Privacy by Default been implemented (e.g., collecting the minimum data by default)? | GDPR | Data collection aligns with the necessity of the service. | ✅ PASS | Low | Data collection aligns with the necessity of the service. |
+| Are logs implemented without unnecessarily storing personal data? | GDPR | Logs store **Email** and **Reservation Details** but NOT passwords or raw birthdate. | ✅ PASS | Low | Logging adheres to Data Minimisation for audit purposes. |
+| Are forms and system components designed with data protection in mind (e.g., secured login, minimal fields)? | General | **Input validation fails** (ZAP payloads/SSTI/RCE vulnerability). | ❌ FAIL | High | Security controls are weak (no input sanitization). |
+| **Data security** | | | | | |
+| Are CSRF, XSS, and SQL injection protections implemented? | General | **CSRF is implemented.** **XSS/SSTI/RCE is NOT** (payloads visible). | ❌ FAIL | High | Failure on the input/output side (SSTI/RCE/XSS risk). |
+| Are passwords securely hashed using a strong algorithm (e.g., bcrypt, Argon2)? | General | **Logs confirm use of bcrypt.** | ✅ PASS | Low | Strong hashing algorithm is used (bcrypt). |
+| **Data anonymization and pseudonymization** | | | | | |
+| Are pseudonymization techniques used to protect data while maintaining its utility? | GDPR | **No pseudonymization is used.** Personal data (Email) is stored in the clear in the logs/DB. | ❌ FAIL | Medium | Would require pseudonymizing email addresses for better security. |
+| **Documentation and communication** | | | | | |
+| Is there a privacy policy available to users during registration and easily accessible? | General | Policy page will be available on GitHub, but explicit link/access not confirmed in app flow. | ⚠️ ATTENTION | Low | Policy document created, but in-app link visibility needs final check. |
