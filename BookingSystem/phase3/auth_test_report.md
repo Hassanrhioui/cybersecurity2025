@@ -34,9 +34,10 @@
 | Action | Location | Observation / Matches Spec? |
 | :--- | :--- | :--- |
 | **Horizontal IDOR (Delete/Edit)** | `/reservation/delete/:id` | **Confirmed: Cannot delete or edit another user's reservation.** **CORRECTLY BLOCKED.** Matches security requirement. |
+| **Use Clean Interface (Stored XSS)** | `/reservation` (Resource Dropdown) | **CRITICAL FAILURE:** Interface is polluted with **raw ZAP payloads** (`ZAP ()`), confirming Input/Output validation failure (Stored XSS Risk). |
 | Vertical Access Control | `../admin/user` | Access Failed / Blocked (403 Forbidden expected). Correctly blocked. |
-| Escalate Privileges (Tampering) | Hidden Form Fields | **[TEST RESULT PENDING: Critical test required with BurpSuite.]** |
-| Delete a Reserver | `/api/admin/users/:id` | **[TEST RESULT PENDING: Test required.]** |
+| Escalate Privileges (Tampering) | `POST /login` (Burp Suite) | **CONFIRMED: BLOCKED.** The system is secure against this direct tampering. |
+| Delete a Reserver | `/api/admin/users/:id` | **CONFIRMED: Blocked.** (Admin function, Reserver correctly blocked). |
 
 ## 🧑‍💼🛡️ Administrator (Logged In)
 
@@ -54,12 +55,15 @@
 | Action | Location | Observation / Matches Spec? |
 | :--- | :--- | :--- |
 | **CRITICAL SECURITY RISK: SSTI/RCE Injection Points** | `/reservation` (Resource Field) | **CRITICAL FAILURE.** ZAP payloads for **Server-Side Template Injection (SSTI)** and **Remote Code Execution (RCE)** are present in the Resource field. |
+| **Protect against Input Pollution** | `/reservation` (Resource Dropdown) | **CRITICAL FAILURE.** The Admin failed to prevent input pollution. Database is vulnerable to Stored XSS. |
 | **Public Disclosure of Identity (GDPR Violation)** | `/` (Homepage) | **FAILURE.** The Admin's user role is clearly displayed on the homepage when logged in. Violates general security/PbD principles. |
 | **Public Disclosure of Identity (GDPR Violation)** | `/` (Homepage) | **FAILURE.** The Reserver's identity (email) is displayed, violating **Spec 8** and **GDPR / PbD** principles. |
-| Access unnecessary logs (PbD) | Discovered Endpoint | **[TEST RESULT PENDING: Need to run Gobuster/wfuzz and test access.]** |
+| Access unnecessary logs (PbD) | Discovered Endpoint | **[TEST RESULT PENDING: Final check needed for Gobuster/wfuzz log access.]** |
 
 ***
 
-### 2️⃣ ZAP Scan Report Link
+### ZAP Scan Report Link
+
+### ZAP Scan Report Link
 
 [**zap\_report\_round4.md**](zap_report_round4.md)
